@@ -1,0 +1,50 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check repository for private files and credentials
+        run: |
+          python scripts/test_repository.py
+          python scripts/check_repository.py --public
+      - name: Install offline test deps (no torch)
+        run: pip install -r backend/requirements-ci.txt
+      - name: Ruff
+        run: |
+          ruff check backend/app backend/alembic scripts
+          ruff format --check backend/app backend/alembic scripts
+      - name: Offline checks (local text cases skip when unavailable)
+        env:
+          SKIP_EVAL_LLM: "1"
+        run: python scripts/accept.py offline
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build frontend
+        working-directory: web
+        run: |
+          npm ci
+          npm run format:check
+          npm run build
+          npm run test:unit
+          npm audit --audit-level=moderate
+      - name: Check UI regression availability
+        run: node scripts/run_frontend_checks.mjs ui

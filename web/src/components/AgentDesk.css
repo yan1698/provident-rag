@@ -1,0 +1,246 @@
+/* Chat foreground only: the shared sky, pet and brand rules are unchanged. */
+body.agent-desk-mode .app-shell {
+  max-width: 1180px;
+  height: 100dvh;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+body.agent-desk-mode .page {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+.agent-chat {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.chat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 4px 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.chat-toolbar .btn {
+  padding: 7px 14px;
+  font-size: 13px;
+}
+.chat-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px 12px 24px 4px;
+  scrollbar-gutter: stable;
+}
+.chat-welcome {
+  display: grid;
+  place-content: center;
+  min-height: 100%;
+  text-align: center;
+  color: var(--muted);
+}
+.chat-welcome h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.chat-welcome p {
+  margin: 0;
+  font-size: 14px;
+}
+.chat-exchange {
+  display: grid;
+  gap: 22px;
+  margin: 8px 0 30px;
+  overflow-wrap: anywhere;
+}
+.chat-user {
+  justify-self: end;
+  max-width: 85%;
+  padding: 12px 18px;
+  background: rgba(124, 92, 228, 0.1);
+  border: 1px solid rgba(124, 92, 228, 0.12);
+  border-radius: 18px 18px 5px 18px;
+}
+.chat-user p {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.75;
+}
+.chat-assistant {
+  min-width: 0;
+  padding: 0 6px;
+}
+.chat-answer-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  font-weight: 600;
+  color: var(--accent-2);
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+.chat-answer-label span {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 11px;
+}
+.chat-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+.chat-actions button {
+  font-size: 12px;
+}
+.chat-progress {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.chat-progress .btn {
+  margin-left: auto;
+  font-size: 12px;
+}
+.chat-input-dock {
+  flex-shrink: 0;
+  padding: 10px 4px 0;
+  max-height: 60dvh;
+  overflow-y: auto;
+}
+.agent-chat .ask-page .composer textarea.ask-query {
+  min-height: 68px;
+  max-height: 160px;
+  font-size: 16px;
+  margin: 6px 0;
+}
+.agent-chat .ask-page .ask-composer {
+  padding: 12px 18px;
+}
+.agent-chat .ask-page .ask-composer-bottom {
+  padding-top: 4px;
+}
+.chat-context-note {
+  margin: 6px 6px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.chat-context-note button {
+  font-size: inherit;
+  margin-left: 6px;
+}
+.agent-chat .answer-only {
+  min-width: 0;
+}
+.agent-chat .verify-block,
+.agent-chat .unverified-claims {
+  margin-top: 12px;
+  font-size: 12px;
+}
+.agent-chat summary {
+  cursor: pointer;
+}
+.chat-pending {
+  color: var(--muted);
+  font-size: 13px;
+}
+.chat-details.panel {
+  position: fixed;
+  inset: 0;
+  width: min(700px, calc(100vw - 32px));
+  max-width: 700px;
+  max-height: 85dvh;
+  overflow-y: auto;
+  padding: 24px;
+  margin: auto;
+  color: var(--ink);
+  background: #fcfaff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+.chat-details::backdrop {
+  background: rgba(54, 40, 80, 0.25);
+  backdrop-filter: blur(3px);
+}
+.chat-detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.chat-detail-head h2 {
+  margin: 0;
+  font-size: 18px;
+}
+.chat-details .agent-tabs {
+  flex-wrap: wrap;
+}
+.chat-details .agent-tabs button {
+  font-size: 13px;
+}
+.chat-details .evidence {
+  overflow-wrap: anywhere;
+}
+.chat-details .trace-log {
+  margin-top: 14px;
+}
+@media (max-width: 600px) {
+  body.agent-desk-mode .app-shell {
+    padding-top: 12px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    padding-left: 10px;
+    padding-right: 56px;
+  }
+  body.agent-desk-mode .page {
+    margin-top: 12px;
+  }
+  .chat-toolbar {
+    padding-bottom: 8px;
+  }
+  .chat-messages {
+    padding-right: 2px;
+  }
+  .chat-welcome h1 {
+    font-size: 22px;
+  }
+  .chat-user {
+    max-width: 92%;
+    padding: 10px 14px;
+  }
+  .chat-exchange {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .chat-input-dock {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .agent-chat .ask-page .ask-composer {
+    padding: 10px 12px;
+  }
+  .agent-chat .ask-page .composer textarea.ask-query {
+    min-height: 60px;
+    font-size: 15px;
+  }
+  .chat-details.panel {
+    width: calc(100vw - 20px);
+    padding: 16px;
+  }
+}

@@ -1,0 +1,7 @@
+target-version = "py311"
+line-length = 120
+
+[lint]
+select = ["E", "F"]
+# First-pass CI: skip unused imports, redefinitions, and script path-insert E402.
+ignore = ["E501", "E402", "F401", "F811"]

@@ -1,0 +1,26 @@
+# API and database connectivity
+# Pin versions for reproducible installs (Python 3.11+)
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.4
+pgvector==0.3.6
+redis==5.2.1
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# Document parsing
+python-multipart==0.0.17
+pymupdf==1.24.14
+
+# Embedding pipeline
+sentence-transformers==3.4.1
+
+# Sparse retrieval
+rank-bm25==0.2.2
+
+# LLM clients and answer rendering
+google-genai==2.19.0
+openai==3.3.1
+markdown==3.7
+beautifulsoup4==4.12.3
