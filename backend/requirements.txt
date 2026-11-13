@@ -10,7 +10,7 @@ pydantic-settings==2.6.1
 python-dotenv==1.0.1
 
 # Document parsing
-python-multipart==0.0.17
+python-multipart==0.0.33
 pymupdf==1.24.14
 
 # Embedding pipeline
