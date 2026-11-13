@@ -1,0 +1,10 @@
+# Lightweight runtime for fixed-context generation. Same pins as backend; no torch/CUDA.
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+sqlalchemy==2.0.36
+pgvector==0.3.6
+redis==5.2.1
+markdown==3.7
+beautifulsoup4==4.12.3
+openai==3.3.1
+httpx==0.28.1

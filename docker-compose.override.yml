@@ -1,0 +1,14 @@
+# 本地开发自动合并。源码只读挂进容器，改 Python 不必重建镜像。
+# 不能把 alembic 挂到 /app/alembic：会盖住 site-packages 里的 alembic 包。
+# 生产不要带本文件：docker compose -f docker-compose.yml up -d --no-build
+services:
+  api:
+    volumes:
+      - ./web:/app/web:ro
+      - ./backend/app:/app/app:ro
+      - ./backend/alembic:/app/migrations:ro
+      - ./backend/alembic.ini:/app/alembic.ini:ro
+      - ./scripts:/app/scripts:ro
+  worker:
+    volumes:
+      - ./backend/app:/app/app:ro

@@ -1,0 +1,2 @@
+# Separate from requirements.txt so the torch / sentence-transformers Docker layer stays cached.
+alembic==1.14.1

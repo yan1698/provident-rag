@@ -1,0 +1,16 @@
+{
+  "provider": "qwen",
+  "model": "qwen3.8-max",
+  "max_requests": 20,
+  "max_tokens": 200000,
+  "max_output_tokens": 512,
+  "max_total_output_tokens": 2048,
+  "max_cost": 20,
+  "currency": "CNY",
+  "input_price_per_million": 12,
+  "output_price_per_million": 36,
+  "price_source": "https://help.aliyun.com/zh/model-studio/model-pricing checked 2026-10-29; Beijing qwen3.8-max standard noncached CNY per million tokens; invoice/discounts unknown.",
+  "timeout_seconds": 60,
+  "retries": 0,
+  "max_pairs_per_case": 20000
+}

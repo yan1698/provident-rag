@@ -1,0 +1,117 @@
+# Environment and secrets. Commit the template only.
+.env
+.env.*
+!.env.example
+.envrc
+.npmrc
+.pypirc
+.netrc
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ecdsa
+*.keystore
+*.jks
+credentials.json
+secrets.json
+service-account*.json
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+*.backup
+*.sql.gz
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Tool caches
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+coverage.xml
+.cache/
+.deps/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Cursor: keep committed rules, drop the rest of local state
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data & models (keep directory placeholders)
+data/benchmarks/
+data/raw/*
+!data/raw/.gitkeep
+data/eval/*
+!data/eval/.gitkeep
+# Concrete questions, documents, answers, and local text fixtures are private.
+/data/test-materials/
+/benchmarks/fixtures/
+data/runtime/*
+!data/runtime/.gitkeep
+data/runtime/postgres/
+data/runtime/models/
+*.pid
+*.pdf
+*.rdb
+
+# Local notes, audit traces, screenshots, and historical implementation plans
+/docs/
+/PHASE1_GENERAL_EXPLANATION.md
+/UNIFIED_QA_IMPLEMENTATION.md
+/RAG项目完成手册.html
+/public-release/
+
+# Benchmark results may contain document text, request traces, database backups,
+# remote host details, downloaded datasets, and vendored dependencies.
+/benchmarks/reports/
+/benchmarks/controlled_plan.json
+/benchmarks/controlled_remaining.json
+/benchmarks/controlled_remaining_plan.json
+/benchmarks/round*.json
+!/benchmarks/round*.example.json
+
+# Model caches
+**/sentence-transformers/
+**/huggingface/
+**/torch/
+
+# Logs & runtime
+*.log
+logs/
+tmp/
+/tmp-*/
+uploads/
+
+# Docker volumes (local)
+postgres_data/
+redis_data/
+
+# Frontend (source in web/src; Compose serves web/dist from a bind mount, do not commit)
+node_modules/
+web/dist/
+web/.vite/

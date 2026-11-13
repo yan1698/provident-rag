@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "rgb": {
+    "source": "https://github.com/chen700564/RGB",
+    "revision": "65ec39e40e7dc9abb50e9bf1b4f32be3f6f16615",
+    "base_url": "https://raw.githubusercontent.com/chen700564/RGB/{revision}/",
+    "license": "CC-BY-NC-SA-4.0",
+    "usage_restrictions": "Noncommercial only; attribution and share-alike required; formal permission required for commercial use. See LICENSE.txt.",
+    "label_provenance": "Official author-refined answers and contexts; not independently human-confirmed by Provident.",
+    "files": [
+      "readme.md",
+      "LICENSE.txt",
+      "evalue.py",
+      "reject_evalue.py",
+      "fact_evalue.py",
+      "config/instruction.yaml",
+      "data/zh_refine.json",
+      "data/zh_int.json",
+      "data/zh_fact.json"
+    ],
+    "optional_files": [],
+    "modes": {
+      "generation_with_context": "supported",
+      "verifier_only": "not_supported",
+      "retrieval_only": "not_supported",
+      "end_to_end_rag": "not_supported",
+      "multi_turn_rag": "not_supported"
+    }
+  },
+  "crud": {
+    "source": "https://github.com/IAAR-Shanghai/CRUD_RAG",
+    "revision": "1aace383994e1f68efa12cf2a8e2dadfb4102ceb",
+    "base_url": "https://raw.githubusercontent.com/IAAR-Shanghai/CRUD_RAG/{revision}/",
+    "license": "README badge claims Apache-2.0; no LICENSE file in pinned repository; underlying news rights require review",
+    "usage_restrictions": "Preserve attribution/license. Do not assume blanket commercial redistribution rights for news content.",
+    "label_provenance": "Official released tasks/references, partly model-generated; not all human-verified ground truth.",
+    "files": [
+      "README.zh_CN.md",
+      "data/crud_split/split_merged.json",
+      "src/tasks/quest_answer.py",
+      "src/tasks/summary.py",
+      "src/tasks/continue_writing.py",
+      "src/tasks/hallucinated_modified.py",
+      "src/metric/common.py",
+      "src/prompts/quest_answer.txt",
+      "src/prompts/summary.txt",
+      "src/prompts/continue_writing.txt",
+      "src/prompts/hallu_mod.txt"
+    ],
+    "optional_files": [],
+    "modes": {
+      "generation_with_context": "supported",
+      "verifier_only": "not_supported",
+      "retrieval_only": "not_supported",
+      "end_to_end_rag": "not_supported",
+      "multi_turn_rag": "not_supported"
+    }
+  },
+  "cmteb_du": {
+    "source": "https://huggingface.co/datasets/C-MTEB/DuRetrieval",
+    "revision": "a1a333e290fe30b10f3f56498e3a0d911a693ced",
+    "base_url": "https://huggingface.co/datasets/C-MTEB/DuRetrieval/resolve/{revision}/",
+    "license": "not_declared_in_dataset_card",
+    "usage_restrictions": "Review original DuReader usage terms before redistribution/commercial use; no blanket license inferred.",
+    "label_provenance": "Official queries; relevance supplied separately by C-MTEB/DuRetrieval-qrels.",
+    "files": [
+      "README.md",
+      "data/queries-00000-of-00001-7c7edb40be6b560c.parquet"
+    ],
+    "optional_files": [
+      "data/corpus-00000-of-00001-19b9e924cb33e4d5.parquet"
+    ],
+    "modes": {
+      "generation_with_context": "not_supported",
+      "verifier_only": "not_supported",
+      "retrieval_only": "supported",
+      "end_to_end_rag": "not_supported",
+      "multi_turn_rag": "not_supported"
+    },
+    "file_checksums": {
+      "data/corpus-00000-of-00001-19b9e924cb33e4d5.parquet": {
+        "sha256": "d4b4eb51b63549ef0851a15fc63c2a61b703dce95e3727b535a08f7ba1d14424",
+        "bytes": 64412709
+      },
+      "data/queries-00000-of-00001-7c7edb40be6b560c.parquet": {
+        "sha256": "62ac55e764bffd4ffceb0aa51e7a536a0e5932f23c8606566906db6a9efb4b94",
+        "bytes": 118461
+      }
+    },
+    "qrels_source": "cmteb_du_qrels",
+    "official_evaluation_split": "dev"
+  },
+  "cmteb_t2": {
+    "source": "https://huggingface.co/datasets/C-MTEB/T2Reranking",
+    "revision": "76631901a18387f85eaa53e5450019b87ad58ef9",
+    "base_url": "https://huggingface.co/datasets/C-MTEB/T2Reranking/resolve/{revision}/",
+    "license": "not_declared_in_dataset_card",
+    "usage_restrictions": "Review original T2Ranking terms before redistribution/commercial use; no blanket license inferred.",
+    "label_provenance": "Official positive/negative relevance labels; no sentence support or citation ground truth.",
+    "files": [
+      "README.md",
+      "data/dev-00000-of-00001-65d96bde8023d9b9.parquet"
+    ],
+    "optional_files": [],
+    "modes": {
+      "generation_with_context": "not_supported",
+      "verifier_only": "not_supported",
+      "retrieval_only": "supported",
+      "end_to_end_rag": "not_supported",
+      "multi_turn_rag": "not_supported"
+    },
+    "file_checksums": {
+      "data/dev-00000-of-00001-65d96bde8023d9b9.parquet": {
+        "sha256": "ceaf1ba1a4777dbb7aecad86fb8aa9cae7a678af6d711d5529c238e89bb6adff",
+        "bytes": 120293598
+      }
+    }
+  },
+  "cmteb_du_qrels": {
+    "source": "https://huggingface.co/datasets/C-MTEB/DuRetrieval-qrels",
+    "revision": "497b7bd1bbb25cb3757ff34d95a8be50a3de2279",
+    "base_url": "https://huggingface.co/datasets/C-MTEB/DuRetrieval-qrels/resolve/{revision}/",
+    "license": "not_declared_in_dataset_card",
+    "usage_restrictions": "Review original DuReader terms; supporting label source, not a separate benchmark score.",
+    "label_provenance": "Official C-MTEB DuRetrieval relevance judgments; not independently re-annotated.",
+    "files": [
+      "README.md",
+      "data/dev-00000-of-00001-d3c385852a7c0c9d.parquet"
+    ],
+    "optional_files": [],
+    "modes": {
+      "generation_with_context": "not_supported",
+      "verifier_only": "not_supported",
+      "retrieval_only": "not_supported",
+      "end_to_end_rag": "not_supported",
+      "multi_turn_rag": "not_supported"
+    },
+    "file_checksums": {
+      "data/dev-00000-of-00001-d3c385852a7c0c9d.parquet": {
+        "sha256": "c87e7c16f535a98b29ee0ebf6977639c793e3bd149c04634a1810273cfd3c3e5",
+        "bytes": 420443
+      }
+    }
+  },
+  "cmteb_protocol": {
+    "source": "https://github.com/FlagOpen/FlagEmbedding/tree/master/research/C_MTEB",
+    "revision": "897baa67c0ffddbfccf4e6776ff55310d67809d4",
+    "base_url": "https://raw.githubusercontent.com/FlagOpen/FlagEmbedding/{revision}/",
+    "license": "MIT repository; dataset terms separate",
+    "usage_restrictions": "Protocol source only; does not license all underlying datasets.",
+    "label_provenance": "Official C-MTEB task definitions and Cross-Encoder evaluation protocol.",
+    "files": [
+      "research/C_MTEB/README.md",
+      "research/C_MTEB/C_MTEB/tasks/Retrieval.py",
+      "research/C_MTEB/C_MTEB/tasks/Reranking.py",
+      "research/C_MTEB/eval_cross_encoder.py"
+    ],
+    "optional_files": [],
+    "modes": {
+      "generation_with_context": "not_supported",
+      "verifier_only": "not_supported",
+      "retrieval_only": "not_supported",
+      "end_to_end_rag": "not_supported",
+      "multi_turn_rag": "not_supported"
+    }
+  }
+}
