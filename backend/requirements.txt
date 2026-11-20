@@ -14,7 +14,7 @@ python-multipart==0.0.17
 pymupdf==1.24.14
 
 # Embedding pipeline
-sentence-transformers==3.4.1
+sentence-transformers==6.3.0
 
 # Sparse retrieval
 rank-bm25==0.2.2
