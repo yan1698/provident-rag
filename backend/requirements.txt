@@ -11,7 +11,7 @@ python-dotenv==1.0.1
 
 # Document parsing
 python-multipart==0.0.17
-pymupdf==1.24.14
+pymupdf==2.1
 
 # Embedding pipeline
 sentence-transformers==3.4.1
